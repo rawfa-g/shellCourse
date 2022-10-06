@@ -1,17 +1,20 @@
 #!/bin/bash
-#Programa para ejemplificar como se realiza el paso de opciones con o source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zshin parámetroscapturar información del usuario y validarla
+#Programa para ejemplificar como se realiza el paso de opciones con o sin parametros
 #Autor: Rafa Gasull - @rawfa_gee
 
-option=0
-backupName=""
-clave=""
-
-echo "Programa Utilidades Postgres"
-#Acepta el ingreso de información de solo un caracter
-read -n1 -p "Ingresar una opción: " option
+echo "Programa opciones"
+echo "Opción 1 enviada: $1"
+echo "Opción 2 enviada: $2"
+echo "Opciones enviadas: $*"
 echo -e "\n"
-read -n10 -p "Ingresar nombre del archivo del backup: " backupName
-echo -e "\n"
-echo "Opción: $option, backupName: $backupName"
-read -s -p "Clave: " clave
-echo -e "\nClave: $clave"
+echo "Recuperar valores"
+while [ -n "$1" ]
+do
+case "$1" in
+-a) echo "opción -a utilizada";;
+-b) echo "opción -b utilizada";;
+-c) echo "opción -c utilizada";;
+*) echo "$1 no es una opción";;
+esac
+shift
+done
