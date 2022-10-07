@@ -7,6 +7,8 @@
 nombreRegex="^([a-z]*)"
 numeroRegex="^[0-9]$"
 
+cowsay "Reto 3" | lolcat
+
 read -n1 -p "Por favor ingrese un numero del 1 al 5: " opcion
 if [[ $opcion = 1 ]]; then
     echo -e "\nEscogista la primera opción"
