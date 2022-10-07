@@ -1,0 +1,4 @@
+Valores escritos con el comando echo
+Añadiendo valores con comando CAT
+Valores escritos con el comando echo
+Añadiendo 2 tanda de valores con comando CAT
