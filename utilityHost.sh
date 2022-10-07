@@ -1,8 +1,20 @@
 #!/bin/bash
 #Reto 1 declarar dos variables una llamada option, otra llamada resulta, inicializarlas e imprimir sus valores
+#Reto 5 escribir información solicitada a un archivo log cuyo nombre será log donde yyyy representa el año, MM el mes, DD el dia, HH hora, mm minutos, SS segundos.
 
-option=$1
-result=$2
+fecha=`date +%Y%m%d%H%M%S`
+usuario=$(logname)
+archivo=log-`date +%Y%m%d%H%M%S`.log
 
-cowsay "Tu opción es $option" | lolcat
-cowsay "Tu segunda variable, resulta es $result" | lolcat
+#Crear archivo
+touch $archivo
+
+#Agregar información del usuario
+echo "Acceso del usuario: $usuario " >> $archivo
+
+#Agregar fecha
+echo "En la fecha: $fecha " >> $archivo
+
+#Mostrar archivo durante 3 seg
+cat $archivo
+sleep 3
